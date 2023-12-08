@@ -16,17 +16,18 @@ export default function TodoList() {
       <TodoListFilters />
       <TodoItemCreator />
 
-      {todoList.map((item) => {
-        return (
-          <ItemWrapper>
-            <TodoItem key={item.id} item={item} />
-          </ItemWrapper>
-        );
-      })}
+      <ItemWrapper>
+        {todoList.map((item) => {
+          return <TodoItem key={item.id} item={item} />;
+        })}
+      </ItemWrapper>
     </>
   );
 }
 
 const ItemWrapper = styled.div`
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 `;

@@ -39,7 +39,7 @@ export default function TodoItem({ item }) {
   }
 
   return (
-    <>
+    <div>
       <input type="text" value={item.text} onChange={editItemText} />
       <input
         type="checkbox"
@@ -47,6 +47,6 @@ export default function TodoItem({ item }) {
         onChange={toggleItemCompletion}
       />
       <button onClick={deleteItem}>X</button>
-    </>
+    </div>
   );
 }
