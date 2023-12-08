@@ -5,6 +5,7 @@ import TodoItem from "./components/TodoItem";
 import TodoListStats from "./components/TodoListStats";
 import TodoListFilters from "./components/TodoListFilters";
 import { filteredTodoListState } from "./atom/TodoListFilter";
+import styled from "styled-components";
 
 export default function TodoList() {
   const todoList = useRecoilValue(filteredTodoListState);
@@ -16,8 +17,16 @@ export default function TodoList() {
       <TodoItemCreator />
 
       {todoList.map((item) => {
-        return <TodoItem key={item.id} item={item} />;
+        return (
+          <ItemWrapper>
+            <TodoItem key={item.id} item={item} />
+          </ItemWrapper>
+        );
       })}
     </>
   );
 }
+
+const ItemWrapper = styled.div`
+  margin: 10px;
+`;
